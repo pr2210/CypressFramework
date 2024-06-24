@@ -22,16 +22,21 @@
   "author": "PankajShinde",
   "license": "ISC",
   "description": "",
-  
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@cypress/webpack-preprocessor": "^6.0.1",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
     "cypress": "^13.10.0",
     "cypress-fill-command": "^1.0.2",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "esbuild": "^0.21.4",
     "multiple-cucumber-html-reporter": "^3.6.2"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "stream-browserify": "^3.0.0"
   }
 }
