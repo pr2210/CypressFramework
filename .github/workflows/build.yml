@@ -21,9 +21,5 @@ jobs:
         if: always()
         with:
           name: cypress-artifacts
-          path: |
-            cypress/reports/html,
-            cypress/cucumberReports/html,
-            cypress/screenshots,
-            cypress/videos
+          path: cypress/reports/html
           retention-days: 1

@@ -25,7 +25,8 @@ module.exports = defineConfig({
   defaultCommandTimeout: 8000,
   reporter: 'cypress-mochawesome-reporter',
   video: true,
-  screenshotsFolder: "images",
+  screenshotsFolder: "cypress/reports/html/screenshots",
+  videosFolder: "cypress/reports/html/videos",
   env: {
     url: "https://rahulshettyacademy.com/"
   },
