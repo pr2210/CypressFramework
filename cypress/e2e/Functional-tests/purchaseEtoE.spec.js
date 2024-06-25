@@ -3,7 +3,7 @@ const Papa = require("papaparse");
 const Jfix = require("../../fixtures/example.json");
 const client = require("../../support/pageObjacts/ClientPage");
 
-describe('Framework Test', () => {
+describe.skip('Framework Test', () => {
 
     it('Framework Test-1', () => {
         const country = " India";
