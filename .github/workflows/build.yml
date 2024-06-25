@@ -7,14 +7,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Conditional Cypress run
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
         if: ${{ github.event_name == 'push' && github.event.head_commit.message != 'skip ci' }}
         run: |
-          # Install npm dependencies
-          npm install
-
-          # Run Cypress tests, excluding specific feature file
-          npx cypress run --config excludeFiles='**/Cucumber-tests/ecommerce.feature'
+          # Run Cypress tests in the Functional-tests directory
+          npx cypress run --spec "cypress/e2e/Functional-tests/**/*"
 
       - name: Uploading artifact
         uses: actions/upload-artifact@v4
