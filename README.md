@@ -52,11 +52,11 @@ To run tests in headed mode,
 
 Launch the Cypress Test Runner>
 
-_npx cypress run --spec cypress\e2e\Functional-tests\*js --headed --browser chrome_
+_npx cypress run --spec "cypress\e2e\Functional-tests" --headed --browser chrome_
 
 Headless Mode>
 
-_npx cypress run --spec cypress\e2e\Functional-tests\*js_
+_npx cypress run --spec "cypress\e2e\Functional-tests"_
 
 Viewing Test Results
 
@@ -64,7 +64,7 @@ After running tests, Cypress will generate reports containing detailed informati
 
 To run the Cucumber BDD test>
 
-_npx cypress run --spec cypress\e2e\Cucumber-tests\ecommerce.feature --headed --browser chrome_
+_npx cypress run --spec "cypress\e2e\Cucumber-tests" --headed --browser chrome_
 
 ***Note***: To run feature file and generate Cucumber HTML report, modify cypress.config.js file-
 

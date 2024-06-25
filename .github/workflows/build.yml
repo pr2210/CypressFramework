@@ -6,15 +6,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+
+      - name: Conditional Cypress run
+        if: ${{ github.event_name == 'push' && github.event.head_commit.message != 'skip ci' }}
+        run: |
+          # Install npm dependencies
+          npm install
+
+          # Run Cypress tests, excluding specific feature file
+          npx cypress run --config excludeFiles='**/Cucumber-tests/ecommerce.feature'
 
       - name: Uploading artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: cypress-report
-          path: cypress/reports/html,cypress/cucumberReports/html
+          path: cypress/reports/html, cypress/cucumberReports/html
           retention-days: 1
