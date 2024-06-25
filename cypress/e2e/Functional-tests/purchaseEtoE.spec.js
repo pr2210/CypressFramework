@@ -47,7 +47,7 @@ describe('Framework Test', () => {
         client.placeOrder.click();
         client.downloadFile.eq(0).click();
         cy.wait(30000);
-        cy.readFile("cypress\\downloads\\order-invoice_ganpatil.csv")
+        cy.readFile("cypress/downloads/order-invoice_ganpatil.csv")
             .then((text) => {
                 const results = Papa.parse(text, { header: true }); // Parse CSV using PapaParse
                 console.log(results.data); // Access parsed CSV data
