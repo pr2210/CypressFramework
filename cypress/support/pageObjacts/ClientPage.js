@@ -27,7 +27,7 @@ class Client
     }
 
     get downloadFile() {
-        return cy.get('.btn-primary')
+        return cy.contains('Click To Download Order Details in CSV');
     }
 
     get productName() {
