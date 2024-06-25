@@ -27,6 +27,7 @@ module.exports = defineConfig({
   video: true,
   screenshotsFolder: "cypress/reports/html/screenshots",
   videosFolder: "cypress/reports/html/videos",
+  downloadsFolder: "cypress/downloads",
   env: {
     url: "https://rahulshettyacademy.com/"
   },
