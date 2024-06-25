@@ -16,10 +16,14 @@ jobs:
           # Run Cypress tests in the Functional-tests directory
           npx cypress run --spec "cypress/e2e/Functional-tests/**/*"
 
-      - name: Uploading artifact
+      - name: Upload Cypress artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: cypress-report
-          path: cypress/reports/html, cypress/cucumberReports/html
+          name: cypress-artifacts
+          path: |
+            cypress/reports/html,
+            cypress/cucumberReports/html,
+            cypress/screenshots,
+            cypress/videos
           retention-days: 1
